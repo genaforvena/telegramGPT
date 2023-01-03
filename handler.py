@@ -20,7 +20,7 @@ def gpt(event, context):
         response = openai.Completion.create(
           engine="text-davinci-003",
           prompt=message,
-          max_tokens=500,
+          max_tokens=200,
           n=1,
           temperature=0.5,
         ).choices[0].text
