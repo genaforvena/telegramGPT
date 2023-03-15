@@ -20,9 +20,12 @@ service: telegramgpt
 # Check out our docs for more details
 frameworkVersion: '3'
 
+plugins:
+  - serverless-python-requirements
+
 provider:
   name: aws
-  runtime: python3.8
+  runtime: python3.9
   environment:
     TELEGRAM_TOKEN: ${env:TELEGRAM_TOKEN}
     OPENAI_KEY: ${env:OPENAI_KEY}
@@ -35,3 +38,7 @@ functions:
           path: my-custom-url
           method: post
           cors: true
+    package:
+      include:
+        - requests
+        - openai

@@ -7,7 +7,7 @@ logger = logging.getLogger()
 logger.setLevel(logging.INFO)
 
 here = os.path.dirname(os.path.realpath(__file__))
-sys.path.append(os.path.join(here, "./vendored"))
+sys.path.append(os.path.join(here, "./venv/lib/python3.8/site-packages"))
 
 import requests
 import openai
@@ -40,7 +40,7 @@ def gpt(event, context):
         response = openai.Completion.create(
             engine="babbage",
             prompt=message,
-            max_tokens=2048
+            max_tokens=1024
         ).choices[0].text
 
         payload = {"text": response, "chat_id": chat_id}

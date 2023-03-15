@@ -13,6 +13,7 @@ parts/
 sdist/
 vendored/
 var/
+node_modules/
 *.egg-info/
 .installed.cfg
 *.egg
