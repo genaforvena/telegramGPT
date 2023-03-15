@@ -38,9 +38,9 @@ def gpt(event, context):
         chat_id = data["message"]["chat"]["id"]
 
         response = openai.Completion.create(
-            engine="text-davinci-003",
+            engine="babbage",
             prompt=message,
-            max_tokens=200,
+            max_tokens=2048,
             n=1,
             temperature=0.5,
         ).choices[0].text
